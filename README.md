@@ -74,9 +74,7 @@ cy.editTask();
 ## 📄 Test Plan Document
 [📑 Test Plan - Google Docs]
 
-This test plan document is publicly available because I don’t have specific user email to invite for this excel sheet.
 You can find the detailed test Plan for all the scenarios in the following Google Docs:
-
 
 👉 Click here to view the Test Plan Document
 ```
@@ -86,9 +84,7 @@ https://docs.google.com/document/d/1-EHfk-Ga9sooDrl2M-PUWgdhWnP9S98oLj_8D3e6Q98/
 ## 📄 Test Cases Document
 [📑 Test Cases - Google Sheet]
 
-This test cases is publicly available because I don’t have specific user email to invite for this excel sheet.
 You can find the detailed test cases for all the scenarios in the following Google Sheet:
-
 
 👉 Click here to view the Test Cases
 ```
@@ -98,9 +94,7 @@ https://docs.google.com/spreadsheets/d/1L1zqgh3pOdeD0vrW-H26vFVHJZT-ob9qOTjWOHdC
 ## 📄 Bug Report Document
 [📑 Bug Report - Google Sheet]
 
-This bug report is publicly available because I don’t have specific user email to invite for this excel sheet.
 You can find the detailed bug report for all the scenarios in the following Google Sheet:
-
 
 👉 Click here to view the bug report
 ```
