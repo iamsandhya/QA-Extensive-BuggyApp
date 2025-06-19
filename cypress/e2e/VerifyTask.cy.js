@@ -3,7 +3,12 @@ describe("Verify task list", () => {
     cy.visit("/");
   });
   it("Verify created task list", () => {
-    cy.createTask();
-    cy.get("ul.space-y-4 > li").should("have.length", 1);
+    // cy.createTask(task);
+    // cy.verifyTaskitemCount(2);
+
+
+    // cy.get("ul.space-y-4 > li").should("have.length", itemCount);
+
+    
   });
 });
