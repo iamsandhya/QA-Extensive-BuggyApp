@@ -23,10 +23,11 @@ describe("Input Field Test", () => {
     tasks.forEach((task) => {
       cy.createTask(task);
 
+      //remove Task
+      cy.removeTask(task.description);
     });
 
     //verify the total Taskitems list
-    cy.verifyTaskitemCount(2);
-
+    cy.verifyTaskitemCount(0);
   });
 });

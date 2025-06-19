@@ -2,15 +2,6 @@ class TaskPage {
   visit() {
     cy.visit("/");
   }
-  // addTaskdescription() {
-  //   cy.get('input[placeholder="Task description"]').type("Complete sample ");
-
-  //   // Assert the input value
-  //   cy.get('input[placeholder="Task description"]').should(
-  //     "have.value",
-  //     "Complete sample "
-  //   );
-  // }
 
   addTaskdescription(description) {
     cy.get('input[placeholder="Task description"]').type(description);
@@ -22,13 +13,6 @@ class TaskPage {
     );
   }
 
-  // addDropdownBox() {
-  //   cy.contains("label", "Category")
-  //     .parent()
-  //     .find("select")
-  //     .invoke("val", "Shopping")
-  //     .trigger("change");
-  // }
   //implementing dropdownbox using select
   addDropdownBox(category) {
     cy.contains("label", "Category")
@@ -38,26 +22,12 @@ class TaskPage {
       .should("have.value", category);
   }
 
-  // addRadioButton() {
-  //   cy.get('input[value="Low"]').should("be.visible");
-  //   cy.get('input[value="Medium"]').should("be.visible");
-  //   cy.get('input[value="High"]').should("be.visible");
-
-  //   //selecting radio button
-  //   cy.get('input[value="Medium"]').check().should("be.checked");
-  // }
-
   //selecting radio button
   addRadioButton(priority) {
     cy.get(`input[value="${priority}"]`).check().should("be.checked");
   }
 
   //select due date
-  // addDuedate() {
-  //   cy.get(".react-datepicker__input-container input").click();
-  //   cy.get(".react-datepicker__day--025").click();
-  // }
-
   addDuedate(date) {
     cy.get(".react-datepicker__input-container input").click();
     cy.get(`.react-datepicker__day--0${date}`).click();
@@ -68,9 +38,30 @@ class TaskPage {
   }
 
   verifyTaskitemCount(itemCount) {
+    cy.get("ul.space-y-4").should("exist");
     cy.get("ul.space-y-4 > li").should("have.length", itemCount);
   }
 
-  
+  editTask(oldDescription, newTask) {
+    cy.contains("ul.space-y-4 li p", oldDescription)
+      .closest("li")
+      .should("exist")
+      .within(() => {
+        cy.get("button.bg-yellow-500").click(); // Click the Edit button
+      });
+
+    // Update the task fields
+    this.addTaskdescription(newTask.description);
+    this.addDropdownBox(newTask.category);
+    this.addRadioButton(newTask.priority);
+    this.addDuedate(newTask.date);
+    this.submit();
+  }
+  removetask(description) {
+    cy.contains("ul.space-y-4 li p", description)
+      .closest("li")
+      .find("button.bg-red-500")
+      .click();
+  }
 }
 export default TaskPage;
